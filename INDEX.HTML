@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TEJAS HK - Resume</title>
+
+    <style>
+
+        /* =========================
+           BASIC RESET
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Arial, sans-serif;
+        }
+
+
+        /* =========================
+           BODY / BACKGROUND
+        ========================= */
+
+        body {
+            background: linear-gradient(
+                135deg,
+                #0f172a,
+                #1e3a8a,
+                #2563eb
+            );
+
+            padding: 40px 20px;
+            color: #333;
+        }
+
+
+        /* =========================
+           RESUME CONTAINER
+        ========================= */
+
+        .resume {
+            max-width: 900px;
+            margin: auto;
+            background: #ffffff;
+
+            border-radius: 15px;
+            overflow: hidden;
+
+            box-shadow:
+                0 20px 50px rgba(0, 0, 0, 0.30);
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        .header {
+            background: linear-gradient(
+                135deg,
+                #0f172a,
+                #1d4ed8
+            );
+
+            color: white;
+
+            padding: 40px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+
+        /* NAME */
+
+        .name h1 {
+            font-size: 42px;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .name p {
+            font-size: 18px;
+            color: #bfdbfe;
+            letter-spacing: 3px;
+        }
+
+
+        /* HEADER CONTACT */
+
+        .contact-top {
+            text-align: right;
+            line-height: 1.8;
+        }
+
+        .contact-top h2 {
+            font-size: 20px;
+            margin-bottom: 8px;
+            color: white;
+        }
+
+        .contact-top p {
+            font-size: 14px;
+            color: #e0f2fe;
+        }
+
+
+        /* =========================
+           MAIN CONTENT
+        ========================= */
+
+        .content {
+            padding: 40px;
+        }
+
+
+        /* =========================
+           PROFILE
+        ========================= */
+
+        .profile {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+
+            margin-bottom: 35px;
+        }
+
+
+        /* PHOTO */
+
+        .photo {
+            width: 160px;
+            height: 200px;
+
+            flex-shrink: 0;
+
+            border-radius: 14px;
+
+            border: 3px solid #2563eb;
+
+            overflow: hidden;
+
+            background: #eff6ff;
+
+            box-shadow:
+                0 8px 20px rgba(37, 99, 235, 0.25);
+        }
+
+
+        /* PHOTO IMAGE */
+
+        .photo img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            /*
+                Adjust this value if you want
+                the image to move up/down.
+            */
+            object-position: center 20%;
+
+            display: block;
+        }
+
+
+        /* ABOUT */
+
+        .about {
+            flex: 1;
+        }
+
+        .about h2 {
+            color: #1d4ed8;
+
+            margin-bottom: 12px;
+
+            font-size: 25px;
+        }
+
+        .about p {
+            line-height: 1.8;
+
+            color: #555;
+
+            font-size: 15px;
+        }
+
+
+        /* =========================
+           SECTION
+        ========================= */
+
+        .section {
+            margin-top: 30px;
+        }
+
+        .section h2 {
+            color: #1e3a8a;
+
+            font-size: 22px;
+
+            border-left: 5px solid #2563eb;
+
+            padding-left: 12px;
+
+            margin-bottom: 18px;
+        }
+
+
+        /* =========================
+           SKILLS
+        ========================= */
+
+        .skills {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 12px;
+        }
+
+        .skill {
+            background: #eff6ff;
+
+            padding: 12px 15px;
+
+            border-radius: 8px;
+
+            color: #1e40af;
+
+            font-weight: 600;
+
+            border: 1px solid #dbeafe;
+
+            transition: 0.3s;
+        }
+
+
+        .skill:hover {
+            background: #dbeafe;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================
+           EDUCATION
+        ========================= */
+
+        .education {
+            padding: 18px 20px;
+
+            margin-bottom: 15px;
+
+            background: #f8fafc;
+
+            border-left: 4px solid #2563eb;
+
+            border-radius: 6px;
+
+            transition: 0.3s;
+        }
+
+
+        .education:hover {
+            transform: translateX(4px);
+
+            box-shadow:
+                0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+
+        .education h3 {
+            color: #1e293b;
+
+            margin-bottom: 7px;
+
+            font-size: 18px;
+        }
+
+
+        .education p {
+            color: #64748b;
+
+            line-height: 1.6;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact-box {
+            background: #f8fafc;
+
+            padding: 20px;
+
+            border-radius: 10px;
+
+            border: 1px solid #e2e8f0;
+        }
+
+
+        .contact-box p {
+            margin: 10px 0;
+
+            color: #475569;
+        }
+
+
+        .contact-box strong {
+            color: #1e3a8a;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        .footer {
+            text-align: center;
+
+            background: #0f172a;
+
+            color: #94a3b8;
+
+            padding: 15px;
+
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           RESPONSIVE DESIGN
+        ========================= */
+
+        @media (max-width: 700px) {
+
+            body {
+                padding: 15px;
+            }
+
+
+            .header {
+                flex-direction: column;
+
+                text-align: center;
+
+                gap: 25px;
+
+                padding: 30px 20px;
+            }
+
+
+            .contact-top {
+                text-align: center;
+            }
+
+
+            .name h1 {
+                font-size: 34px;
+            }
+
+
+            .content {
+                padding: 25px;
+            }
+
+
+            .profile {
+                flex-direction: column;
+
+                text-align: center;
+            }
+
+
+            .photo {
+                width: 160px;
+                height: 200px;
+            }
+
+
+            .skills {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <div class="resume">
+
+
+        <!-- =========================
+             HEADER
+        ========================== -->
+
+        <header class="header">
+
+            <div class="name">
+
+                <h1>TEJAS HK</h1>
+
+                <p>STUDENT</p>
+
+            </div>
+
+
+            <div class="contact-top">
+
+                <h2>Contact Me</h2>
+
+                <p>📞 +91 8431169945</p>
+
+                <p>📧 tejashk2006@gmail.com</p>
+
+                <p>📍 Hassan,HALEKOTE, India</p>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =========================
+             MAIN CONTENT
+        ========================== -->
+
+        <main class="content">
+
+
+            <!-- PROFILE -->
+
+            <div class="profile">
+
+
+                <!-- YOUR PHOTO -->
+
+                <div class="photo">
+                        <img src="C:\Users\Lenovo\Downloads\WhatsApp Image 2026-10-15 at 10.32.33 AM.jpeg">
+                 
+
+                </div>
+
+
+                <!-- ABOUT -->
+
+                <div class="about">
+
+                    <h2>About Me</h2>
+
+                    <p>
+                        I am a motivated and hardworking student
+                        with a strong interest in technology and
+                        web development. I enjoy learning new
+                        skills, working on projects, solving
+                        problems, and developing my professional
+                        abilities.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =========================
+                 SKILLS
+            ========================== -->
+
+            <section class="section">
+
+                <h2>Skills</h2>
+
+
+                <div class="skills">
+
+                    <div class="skill">
+                        HTML & CSS
+                    </div>
+
+                    <div class="skill">
+                        JavaScript
+                    </div>
+
+                    <div class="skill">
+                        Communication
+                    </div>
+
+                    <div class="skill">
+                        Problem Solving
+                    </div>
+
+                    <div class="skill">
+                        Teamwork
+                    </div>
+
+                    <div class="skill">
+                        Web Development
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =========================
+                 EDUCATION
+            ========================== -->
+
+            <section class="section">
+
+                <h2>Education</h2>
+
+
+                <div class="education">
+
+                    <h3>
+                        Central Commerce College
+                    </h3>
+
+                    <p>
+                        Undergraduate Student |
+                        2023 - 2026
+                    </p>
+
+                </div>
+
+
+                <div class="education">
+
+                    <h3>
+                        Higher Secondary Education
+                    </h3>
+
+                    <p>
+                        PRIYADARSHINI HIGH SCHOOL
+                    </p>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =========================
+                 CONTACT
+            ========================== -->
+
+            <section class="section">
+
+                <h2>Contact</h2>
+
+
+                <div class="contact-box">
+
+                    <p>
+                        <strong>Email:</strong>
+                        tejashk2006@gmail.com
+                    </p>
+
+
+                    <p>
+                        <strong>Phone:</strong>
+                        +91 8431169945
+                    </p>
+
+
+                    <p>
+                        <strong>Address:</strong>
+                        Hassan,HALEKOTE, India
+                    </p>
+
+                </div>
+
+            </section>
+
+        </main>
+
+
+
+        <!-- =========================
+             FOOTER
+        ========================== -->
+
+        <footer class="footer">
+
+            © 2026 TEJAS HK | Resume
+
+        </footer>
+
+
+    </div>
+
+</body>
+
+</html>
